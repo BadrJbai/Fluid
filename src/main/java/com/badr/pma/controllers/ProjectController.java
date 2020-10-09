@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.badr.pma.dao.EmployeeRepository;
 import com.badr.pma.dao.ProjectRepository;
@@ -35,17 +36,16 @@ public class ProjectController {
 	// using model to bind form between view and controller
 	public String displayProjectFrom(Model model) {
 		Project aproject = new Project();
-		List<Employee> getemployeesList = empRepo.findAll();
-		// Binding always: Container ref by thymeleaf + Object
-		model.addAttribute("allEmployees", getemployeesList);
+		List<Employee> employees = empRepo.findAll();
 		// binding the form should use the th:object same name
 		model.addAttribute("project", aproject);
+		model.addAttribute("listallEmployees", employees);
+		// System.out.println(employees);
 		return "projects/new-projects";
 	}
 
 	@PostMapping("/save")
-	public String createProject(Project project, Model model) {
-
+	public String createProject(Project project, @RequestParam List<Long> employees, Model model) {
 		// This should handle saving into the database;
 		// use a redirect to prevent duplicate submission.
 		proRepo.save(project);

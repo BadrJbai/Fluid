@@ -22,9 +22,9 @@
 					  <!-- project.employees or use the * because list emp is part of project -->
 				      <!-- Looping through a list of employees -->		
 					  <select th:filed="${project.listOfEmployees}" multiple="multiple">
-						  	<option th:each="employee : ${allEmployees}"
-							  	 th:value="${employee.employeeId}"
-							  	 th:text="${employee.firstName}">
+						  	<option th:each="iterator : ${listallEmployees}"
+							  	 th:value="${iterator.employeeId}"
+							  	 th:text="${iterator.firstName}">
 						  	</option>
 					  </select>
 					  

@@ -36,7 +36,6 @@ public class Employee {
 
 	}
 
-	// Remember not to include employeeID cause it is handled by Hibernate
 	public Employee(String firstName, String lastName, String email) {
 		super();
 		this.firstName = firstName;

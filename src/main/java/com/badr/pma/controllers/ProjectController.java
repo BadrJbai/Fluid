@@ -37,16 +37,15 @@ public class ProjectController {
 	@GetMapping("/new")
 	// using model to bind form between view and controller
 	public String displayProjectFrom(Model model) {
-
 		Project aproject = new Project();
-		// binding the form should use the th:object same name
 		List<Employee> myEmployees = empRepo.findAll();
-		model.addAttribute("bamboo", myEmployees);
+		model.addAttribute("listAllEmployees", myEmployees);
 
 		model.addAttribute("project", aproject);
 		return "projects/new-projects";
 	}
 
+	// Added bindingResult into the save
 	@PostMapping("/save")
 	public String createProject(Project project, BindingResult bindingResult, @RequestParam List<Long> employees,
 			Model model) {
@@ -54,7 +53,6 @@ public class ProjectController {
 		// use a redirect to prevent duplicate submission.
 
 		proRepo.save(project);
-
 		return "redirect:/projects/new";
 	}
 

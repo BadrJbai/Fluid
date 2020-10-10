@@ -22,10 +22,8 @@
 					  <!-- project.employees or use the * because list emp is part of project -->
 				      <!-- Looping through a list of employees -->		
 					  <select th:field="${project.employees}" multiple="multiple">
-							  	<option th:each="iterator: ${bamboo}"
-								  	    th:value="${iterator.employeeId}"
-								  	    th:text="${iterator.firstName}">
-							  	</option>
+						<option th:each="iterator: ${bamboo}" th:value="${iterator.employeeId}"  th:text="${iterator.firstName}">
+						</option>
 					  </select>
 					  
 				      <button type="submit">Create Project</button>

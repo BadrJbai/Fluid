@@ -22,16 +22,9 @@ public class Project {
 
 	// One project could be assigned to many employees
 	// Mapped by this value
-	@OneToMany(mappedBy = "projectReferenceHibernateEmp")
+
+	@OneToMany(mappedBy = "theProject")
 	private List<Employee> employees;
-
-	public List<Employee> getEmployees() {
-		return employees;
-	}
-
-	public void setEmployees(List<Employee> employees) {
-		this.employees = employees;
-	}
 
 	public Project() {
 
@@ -76,4 +69,11 @@ public class Project {
 		this.projectId = projectId;
 	}
 
+	public List<Employee> getEmployees() {
+		return employees;
+	}
+
+	public void setEmployees(List<Employee> employees) {
+		this.employees = employees;
+	}
 }

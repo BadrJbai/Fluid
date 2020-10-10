@@ -27,8 +27,9 @@ public class Employee {
 
 	@ManyToOne(cascade = { CascadeType.DETACH, CascadeType.REFRESH, CascadeType.MERGE,
 			CascadeType.PERSIST }, fetch = FetchType.LAZY)
+
 	@JoinColumn(name = "project_id")
-	private Project projectReferenceHibernateEmp;
+	private Project theProject;
 
 	// For binding this into a form
 	public Employee() {
@@ -41,14 +42,6 @@ public class Employee {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
-	}
-
-	public Project getProjectReferenceHibernateEmp() {
-		return projectReferenceHibernateEmp;
-	}
-
-	public void setProjectReferenceHibernateEmp(Project projectReferenceHibernateEmp) {
-		this.projectReferenceHibernateEmp = projectReferenceHibernateEmp;
 	}
 
 	public String getFirstName() {
@@ -81,6 +74,14 @@ public class Employee {
 
 	public void setEmployeeId(long employeeId) {
 		this.employeeId = employeeId;
+	}
+
+	public Project getTheProject() {
+		return theProject;
+	}
+
+	public void setTheProject(Project theProject) {
+		this.theProject = theProject;
 	}
 
 }

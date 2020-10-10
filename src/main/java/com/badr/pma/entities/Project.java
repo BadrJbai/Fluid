@@ -15,6 +15,7 @@ public class Project {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 
 	private long projectId;
+
 	private String name;
 	private String stage;// NOTSTARTED, COMPLETED, IMPROGRESS
 	private String description;
@@ -22,7 +23,15 @@ public class Project {
 	// One project could be assigned to many employees
 	// Mapped by this value
 	@OneToMany(mappedBy = "projectReferenceHibernateEmp")
-	private List<Employee> listOfEmployees;
+	private List<Employee> employees;
+
+	public List<Employee> getEmployees() {
+		return employees;
+	}
+
+	public void setEmployees(List<Employee> employees) {
+		this.employees = employees;
+	}
 
 	public Project() {
 
@@ -57,14 +66,6 @@ public class Project {
 
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	public List<Employee> getListOfEmployees() {
-		return listOfEmployees;
-	}
-
-	public void setListOfEmployees(List<Employee> listOfEmployees) {
-		this.listOfEmployees = listOfEmployees;
 	}
 
 	public long getProjectId() {

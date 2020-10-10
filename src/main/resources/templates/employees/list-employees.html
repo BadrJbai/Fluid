@@ -20,7 +20,9 @@
 		    <thead class="thead-dark">
 		        <tr>
 		            <th scope="col">Employee Name</th>
-		            <th scope="col">Employee mail</th>
+		            <th scope="col">Employee last Name</th>
+		            <th scope="col">Employee Email</th>
+		            <th scope="col">Employee ID</th>
 		        </tr>
 		    </thead>
 		    <tbody>
@@ -28,6 +30,7 @@
 					<td th:text="${iterator.firstName}"/> 
 					<td th:text="${iterator.lastName}"/> 
 					<td th:text="${iterator.email}"/> 
+					<td th:text="${iterator.employeeId}"/>
 		        </tr>	
 		    </tbody>
 		</table>

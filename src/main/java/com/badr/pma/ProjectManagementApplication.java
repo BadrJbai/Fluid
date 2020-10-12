@@ -31,17 +31,17 @@ public class ProjectManagementApplication {
 
 		return args -> {
 
-			Employee emp1 = new Employee("John", "Warton", "warton@gmail.com");
-			Employee emp2 = new Employee("Mike", "Lanister", "lanister@gmail.com");
-			Employee emp3 = new Employee("Steve", "Reeves", "Reeves@gmail.com");
+			Employee emp1 = new Employee("Badr", "Warton", "warton@gmail.com");
+			Employee emp2 = new Employee("Wajih", "Lanister", "lanister@gmail.com");
+			Employee emp3 = new Employee("Wassim", "Reeves", "Reeves@gmail.com");
 
-			Employee emp4 = new Employee("Ronald", "Connor", "connor@gmail.com");
-			Employee emp5 = new Employee("Jim", "Salvator", "Sal@gmail.com");
-			Employee emp6 = new Employee("Peter", "Henley", "henley@gmail.com");
+			Employee emp4 = new Employee("Ahmed", "Connor", "connor@gmail.com");
+			Employee emp5 = new Employee("Jeffrey", "Salvator", "Sal@gmail.com");
+			Employee emp6 = new Employee("Peter", "Pan", "henley@gmail.com");
 
-			Employee emp7 = new Employee("Richard", "Carson", "carson@gmail.com");
-			Employee emp8 = new Employee("Honor", "Miles", "miles@gmail.com");
-			Employee emp9 = new Employee("Tony", "Roggers", "roggers@gmail.com");
+			Employee emp7 = new Employee("Aymen", "Carson", "carson@gmail.com");
+			Employee emp8 = new Employee("Imed", "Miles", "miles@gmail.com");
+			Employee emp9 = new Employee("Tony", "montana", "roggers@gmail.com");
 
 			Project pro1 = new Project("Large Production Deploy", "NOTSTARTED",
 					"This requires all hands on deck for" + "the final deployment of the software into production");

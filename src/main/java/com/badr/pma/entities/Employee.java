@@ -1,5 +1,7 @@
 package com.badr.pma.entities;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -7,7 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Employee {
@@ -25,11 +28,11 @@ public class Employee {
 	// Adding rules to many to one using Cascade Type + Fetch with LAZY
 	// pattern(performance)
 
-	@ManyToOne(cascade = { CascadeType.DETACH, CascadeType.REFRESH, CascadeType.MERGE,
+	@ManyToMany(cascade = { CascadeType.DETACH, CascadeType.REFRESH, CascadeType.MERGE,
 			CascadeType.PERSIST }, fetch = FetchType.LAZY)
 
-	@JoinColumn(name = "project_id")
-	private Project theProject;
+	@JoinTable(name = "project_employee", joinColumns = @JoinColumn(name = "employee_id"), inverseJoinColumns = @JoinColumn(name = "project_id"))
+	private List<Project> listofProjects;
 
 	// For binding this into a form
 	public Employee() {
@@ -75,12 +78,12 @@ public class Employee {
 		this.employeeId = employeeId;
 	}
 
-	public Project getTheProject() {
-		return theProject;
+	public List<Project> getListofProjects() {
+		return listofProjects;
 	}
 
-	public void setTheProject(Project theProject) {
-		this.theProject = theProject;
+	public void setListofProjects(List<Project> listofProjects) {
+		this.listofProjects = listofProjects;
 	}
 
 }

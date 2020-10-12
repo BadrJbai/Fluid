@@ -9,7 +9,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.badr.pma.dao.EmployeeRepository;
 import com.badr.pma.dao.ProjectRepository;
@@ -47,17 +46,11 @@ public class ProjectController {
 
 	// Added bindingResult into the save
 	@PostMapping("/save")
-	public String createProject(Project project, BindingResult bindingResult, @RequestParam List<Long> employees,
-			Model model) {
+	public String createProject(Project project, BindingResult bindingResult, Model model) {
 		// This should handle saving into the database;
 		// use a redirect to prevent duplicate submission.
 		proRepo.save(project);
-		Iterable<Employee> chosenEmployees = empRepo.findAllById(employees);
-		for (Employee emp : chosenEmployees) {
-			emp.setTheProject(project);
-			empRepo.save(emp);
-		}
-		return "redirect:/projects/new";
+		return "redirect:/projects/";
 	}
 
 }

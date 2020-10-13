@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="layouts :: headReference"></head>
+<head th:replace="layouts :: headReference">
+  <link rel="stylesheet" href="src\main\resources\static\css\formatting.css">
+
+</head>
 
 <body>
 <!-- Navigation Bar from thymeleaf layout to use it on multiple pages -->
 
 <nav th:replace="layouts :: navReference"></nav>
 
-  <div class="container">
+  <div class="float-sm-left">
   		<br>
-  		<h4 class="font-weight-bold text-danger">Current Projects:</h4>
+  		<h1 class="elegantshd">Current Projects:</h1>
   		<br>
-		<table class="table table-bordered table-hover table-dark table-striped" >
+		<table class="table table-bordered table-hover table-dark table-striped text-left">
 		    <thead>
 		        <tr>
-		            <th scope="col" class="font-weight-bold text-warning" >Project Name</th>
-		            <th scope="col"class="font-weight-bold text-warning">Project Current Stage</th>
+		            <th scope="col" class="font-weight-bold text-warning text-left" >Project Name</th>
+		            <th scope="col"class="font-weight-bold text-warning text-left">Project Current Stage</th>
 		        </tr>
 		    </thead>
 		    <tbody>
@@ -27,13 +30,13 @@
 		    </tbody>
 		</table>
 		<br>
-		<h4 class="font-weight-bold text-danger">Current Employees:</h4>
-		<table class="table table-bordered table-hover table-dark table-striped">
+		<h4 class="font-weight-bold text-danger text-left text-left">Current Employees:</h4>
+		<table class="table table-bordered table-hover table-dark table-striped text-left">
 		    <thead>
 		        <tr>
-		            <th scope="col" class="font-weight-bold text-warning">Employee First Name</th>
-		            <th scope="col" class="font-weight-bold text-warning">Employee Last Name</th>
-		             <th scope="col" class="font-weight-bold text-warning">Employee's Mail</th>
+		            <th scope="col" class="font-weight-bold text-warning text-left">Employee First Name</th>
+		            <th scope="col" class="font-weight-bold text-warning text-left">Employee Last Name</th>
+		             <th scope="col" class="font-weight-bold text-warning text-left">Employee's Mail</th>
 		        </tr>
 		    </thead>
 		    <tbody>

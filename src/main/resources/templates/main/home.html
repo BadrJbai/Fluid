@@ -2,7 +2,6 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="layouts :: headReference">
-  <link rel="stylesheet" href="src\main\resources\static\css\formatting.css">
 
 </head>
 
@@ -13,7 +12,7 @@
 
   <div class="float-sm-left">
   		<br>
-  		<h1 class="elegantshd">Current Projects:</h1>
+  			<h4 class="elegantshd">Current Projects:</h4>
   		<br>
 		<table class="table table-bordered table-hover table-dark table-striped text-left">
 		    <thead>
@@ -30,7 +29,8 @@
 		    </tbody>
 		</table>
 		<br>
-		<h4 class="font-weight-bold text-danger text-left text-left">Current Employees:</h4>
+			<h4  class="elegantshd">Current Employees:</h4>
+		<br>	
 		<table class="table table-bordered table-hover table-dark table-striped text-left">
 		    <thead>
 		        <tr>
@@ -46,8 +46,7 @@
 					<td th:text="${iterator.email}"/> 
 		        </tr>	
 		    </tbody>
-		</table>
-		
+		</table>		
 	</div>
 </body>
 </html>

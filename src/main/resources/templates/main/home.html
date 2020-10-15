@@ -46,7 +46,13 @@
 					<td th:text="${iterator.email}"/> 
 		        </tr>	
 		    </tbody>
-		</table>		
+		</table>	
+
 	</div>
+	<div class="col-md-4">
+			<canvas id="myPiechart" height="50" width="50"></canvas>
+	</div>
+	<script type="text/javascript" th:src="@{/js/charts.js}"></script>
+	
 </body>
 </html>
